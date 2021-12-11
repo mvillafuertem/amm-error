@@ -10,7 +10,7 @@ scalaVersion := scala3
 
 crossScalaVersions := Seq(scala3)
 
-libraryDependencies ++= Seq("com.lihaoyi" % "ammonite" % "2.4.1" % Test cross CrossVersion.full) //exclude("com.lihaoyi", "sourcecode_2.13"))
+libraryDependencies ++= Seq("com.lihaoyi" % "ammonite" % "2.4.1" % Test cross CrossVersion.full exclude("com.lihaoyi", "sourcecode_2.13"))
 
 commands += Command.args("amm", "<scriptClass>") { (state, args) =>
   val cp = getClasspathAsJars(state).mkString(":")
